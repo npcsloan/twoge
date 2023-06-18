@@ -1,0 +1,32 @@
+version: '3'
+services:
+  api:
+    build: .
+    container_name: twoge_app
+    environment:
+      SQLALCHEMY_DATABASE_URI: postgresql://twoge:twoge1234@twoge-postgres.cclczpeaskv5.us-west-1.rds.amazonaws.com:5432/twogedb
+    ports:
+      - 5000:5000
+    # networks:
+    #   - twoge
+    volumes:
+      - .:/app
+    # depends_on:
+    #   database:
+    #     condition: service_healthy
+  # webapp:
+  #   image: nginx
+  #   container_name: twoge_nginx
+  #   networks:
+  #     - twoge
+  #   ports:
+  #     - 5000:80
+  #   volumes:
+  #     - .:/usr/share/nginx/html
+  #   depends_on:
+  #     - api
+
+# networks:
+#   twoge:
+#     name: twoge_network
+#     driver: bridge
