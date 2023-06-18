@@ -3,8 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
 import os
-# from dotenv import load_dotenv
-# load_dotenv()
+from dotenv import load_dotenv
+load_dotenv()
 
 app = Flask(__name__)
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
@@ -79,7 +79,7 @@ def new_post():
     else:
         return render_template('new_post.html')
 
-# if __name__ == "__main__":
-#     app.run(host='0.0.0.0', port=80)
-if __name__ == '__main__':
-    app.run()
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=5000)
+# if __name__ == '__main__':
+#     app.run()
