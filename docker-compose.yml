@@ -5,12 +5,12 @@ services:
     container_name: twoge_app
     environment:
       SQLALCHEMY_DATABASE_URI: postgresql://twoge:twoge1234@twoge-postgres.cclczpeaskv5.us-west-1.rds.amazonaws.com:5432/twogedb
-    # ports:
-    #   - 5000:5000
+    ports:
+      - 5000:5000
     # networks:
     #   - twoge
-    # volumes:
-    #   - .:/app
+    volumes:
+      - .:/app
     # depends_on:
     #   database:
     #     condition: service_healthy
