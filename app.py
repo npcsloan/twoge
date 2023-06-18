@@ -80,4 +80,4 @@ def new_post():
         return render_template('new_post.html')
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=80)
